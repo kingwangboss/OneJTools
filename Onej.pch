@@ -1,0 +1,66 @@
+//
+//  Onej.pch
+//  彩票
+//
+//  Created by One'J on 16/5/16.
+//  Copyright © 2016年 One'J. All rights reserved.
+//
+
+#ifndef Onej_pch
+#define Onej_pch
+
+#ifdef __OBJC__
+
+/******************环信头文件******************/
+
+//#import "EaseMob.h"
+/******************环信头文件******************/
+
+
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+
+//define this constant if you want to use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND
+
+//define this constant if you want to enable auto-boxing for default syntax
+#define MAS_SHORTHAND_GLOBALS
+
+//使用16位颜色
+#define UIColorFromHex(s) [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
+
+// 颜色
+#define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+// 主色调
+#define MainColor [UIColor colorWithRed:61 / 255.0 green:59 / 255.0 blue:122 / 255.0 alpha:1]
+// 背景色
+#define BackColor [UIColor colorWithRed:230 / 255.0 green: 232/ 255.0 blue:250 / 255.0 alpha:1]
+// 辅助色
+#define SubColor [UIColor colorWithRed:165 / 255.0 green: 167/ 255.0 blue:189 / 255.0 alpha:1]
+
+// 随机颜色
+#define RandomColor [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1]
+//系统窗口
+#define OJKeyWindow [UIApplication sharedApplication].keyWindow
+// 系统字体
+#define SYS_FONT(x) [UIFont systemFontOfSize:x]
+// 偏好设置
+#define UserDefaults [NSUserDefaults standardUserDefaults]
+// 通知中心
+#define NotificationCenter [NSNotificationCenter defaultCenter]
+// 屏幕宽度
+#define SCREENW [UIScreen mainScreen].bounds.size.width
+// 屏幕高度
+#define SCREENH [UIScreen mainScreen].bounds.size.height
+// 比例
+#define kPP ([UIScreen mainScreen].bounds.size.width / 640)
+
+#endif
+
+#endif
